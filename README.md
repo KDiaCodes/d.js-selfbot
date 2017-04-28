@@ -1,5 +1,6 @@
 # d.js-selfbot
 ## Initializing
+
 To clone the repository, run `git clone https://github.com/EPICZEUS1/d.js-selfbot.git`, or download directly.
 
 Install node v7.6 or greater, then run `npm i` to download required packages.
@@ -7,7 +8,9 @@ Install node v7.6 or greater, then run `npm i` to download required packages.
 If you do not have a custom search engine to use, remove the file `google.js` and the config value `customsearch`.
 
 ##Creating a New Command
-Create a new JavaScript file in the commands directory. Commands follow this template:```js
+
+Create a new JavaScript file in the commands directory. Commands follow this template:
+```js
 exports.run = (/* function arguments, typically bot, message, args */) => {
 	// function code
 }
