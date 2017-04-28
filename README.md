@@ -1,6 +1,6 @@
 # d.js-selfbot
 ## Initializing
-To clone the repository, run `git clone https://github.com/EPICZEUS1/d.js-selfbot.git`.
+To clone the repository, run `git clone https://github.com/EPICZEUS1/d.js-selfbot.git`, or download directly.
 
 Install node v7.6 or greater, then run `npm i` to download required packages.
 
