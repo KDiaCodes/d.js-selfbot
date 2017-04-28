@@ -1,3 +1,8 @@
 node_modules
-images
+images/*.jpg
+images/*.png
+images/*.gif
+images/rand/*.jpg
+images/rand/*.png
+images/rand/*.gif
 config.json
