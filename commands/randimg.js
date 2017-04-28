@@ -10,17 +10,19 @@ exports.run = (bot, message, args) => {
 			console.error(err);
 		}
 	}
-	let files = fs.readdirSync("./images/rand");
+	fs.readdir("./images/rand", (err, files) => {
+		if (err) return console.error(err);
 
-	if (args.length) files = files.find(a => a.startsWith(args.join("")));
+		if (args.length) files = files.filter(a => a.startsWith(args.join("")));
 
-	if (!files.length) return console.log("Specified tag not found.");
-	
-	const file = `./images/${files[~~(Math.random() * files.length)]}`;
+		if (!files.length) return console.log("Specified tag not found.");
+		
+		const file = `./images/${files[~~(Math.random() * files.length)]}`;
 
-	message.channel.send({file})
-		.then(() => message.delete())
-		.catch(console.error);
+		message.channel.send({file})
+			.then(() => message.delete())
+			.catch(console.error);
+	});
 };
 
 exports.info = {
