@@ -19,6 +19,7 @@
   },
   "author": "EPICZEUS",
   "license": "MIT",
+  "repository": "https://github.com/EPICZEUS1/d.js-selfbot",
   "optionalDependencies": {
     "bufferutil": "^2.0.0",
     "erlpack": "github:hammerandchisel/erlpack"
