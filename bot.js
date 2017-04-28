@@ -11,7 +11,6 @@ bot.commands  = new Discord.Collection();
 bot.aliases   = new Discord.Collection();
 bot.deleted   = new Discord.Collection();
 bot.fudge     = new Map();
-bot.robomode  = false;
 
 /* eslint-enable no-multi-spaces */
 
