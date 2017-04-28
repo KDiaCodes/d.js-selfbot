@@ -1,0 +1,9 @@
+{
+	"prefix": "Your desired prefix",
+	"token": "Your user token",
+	"customsearch": {
+		"token": "Your custom search engine token",
+		"id": "Your custom search engine id"
+	},
+	"startGame": "The initial game to set, null if one is not desired"
+}
