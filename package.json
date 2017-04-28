@@ -18,7 +18,7 @@
     "test": "bot"
   },
   "author": "EPICZEUS",
-  "license": "ISC",
+  "license": "MIT",
   "optionalDependencies": {
     "bufferutil": "^2.0.0",
     "erlpack": "github:hammerandchisel/erlpack"
