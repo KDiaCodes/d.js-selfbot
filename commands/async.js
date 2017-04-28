@@ -1,5 +1,5 @@
-const {RichEmbed} = require("discord.js");
-const inspect = require("util").inspect;
+const Discord = require("discord.js");
+const {inspect} = require("util");
 const mTime = require("microtime");
 
 exports.run = async (bot, message, args) => {
@@ -15,13 +15,15 @@ exports.run = async (bot, message, args) => {
 		if (typeof evaled !== "string") evaled = inspect(evaled);
 		if (evaled.length > 2036) throw new Error("Output too long, saved to console");
 
-		message.edit(`**INPUT:** \`${code}\``, {embed: new RichEmbed()
+		console.log(code);
+		console.log(evaled);
+
+		message.edit(`**INPUT:** \`${code}\``, {embed: new Discord.RichEmbed()
 			.setTitle("**OUTPUT**")
 			.setDescription("```js\n" + evaled.replace(/`/g, "`\u200b").replace(new RegExp(`${bot.token}|${bot.config.customsearch.token}|${bot.config.customsearch.id}`, "g"), "[SECRET]") + "\n```")
 			.setFooter(`Runtime: ${runTime.toFixed(3)}ms`, "https://cdn.discordapp.com/attachments/286943000159059968/298622278097305600/233782775726080012.png")
 			.setColor(24120)
 		}).catch(console.error);
-		console.log(code + "\n" + evaled);
 	} catch (err) {
 		message.edit("**INPUT:** `" + code + "`", {
 			embed: {
