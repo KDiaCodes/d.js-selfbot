@@ -6,8 +6,6 @@ exports.run = (bot, message, args) => {
 	const code = args.join(" ");
 
 	try {
-		if (/bot\.(?:token|config(?:\.token|\.customsearch\.?\w*)?);?$/.test(code)) throw '"I won\'t do that."';
-
 		if (!code) return console.log("No code provided!");
 
 		const start = mTime.nowDouble();
@@ -23,7 +21,7 @@ exports.run = (bot, message, args) => {
 
 		const embed = new RichEmbed()
 			.setTitle("**OUTPUT**")
-			.setDescription("```js\n" + evaled.replace(/`/g, "`\u200b") + "\n```")
+			.setDescription("```js\n" + evaled.replace(/`/g, "`\u200b").replace(new RegExp(`${bot.token}|${bot.config.customsearch.token}|${bot.config.customsearch.id}`, "g"), "[SECRET]") + "\n```")
 			.setFooter(`Runtime: ${runTime.toFixed(3)}ms`, "https://cdn.discordapp.com/attachments/286943000159059968/298622278097305600/233782775726080012.png")
 			.setColor(24120);
 
