@@ -25,7 +25,7 @@ fs.readdir("./commands", (err, files) => {
 		const file = files[i];
 		const data = require(`./commands/${file}`);
 		
-		bot.commands.set(file.slice(0, -3), data);
+		bot.commands.set(data.info.name, data);
 		for (let i = data.info.aliases.length; i--;) bot.aliases.set(data.info.aliases[i], data.info.name);
 	}
 	bot.loadFinalized = (mTime.nowDouble() - loadStart) * 1000;
