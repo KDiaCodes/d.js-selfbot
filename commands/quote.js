@@ -6,8 +6,9 @@ exports.run = (bot, message, args) => {
 	if (!channel) {
 		if (bot.channels.has(args[0])) {
 			channel = bot.channels.get(args[0]);
-		} else if (message.mentions.users.size && message.mentions.users.first().dmChannel && args[0] == message.mentions.users.first().toString()) {
+		} else if (message.mentions.users.size && args[0] == message.mentions.users.first().toString()) {
 			channel = message.mentions.users.first().dmChannel;
+			if (!channel) return console.log("No dm channel exists!");
 		} else {
 			pos = 0;
 			channel = message.channel;
